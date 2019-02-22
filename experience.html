@@ -60,6 +60,7 @@ if it's not present, don't show loader */
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -94,38 +95,9 @@ if it's not present, don't show loader */
       </div>
     </div>
 
-	<section class="top-btn-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="top-btn-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="top-btn-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<section class="home-banner-area relative">
-		<div class="container-fluid">
-			<div class="row d-flex align-items-center justify-content-center">
-				<div class="header-right col-lg-10 col-md-6 animated jackInTheBox">
+	<section class="experience-title">
+				<div class="animated jackInTheBox">
 					<center>
 					<h1>
 						My Experience.
@@ -139,12 +111,11 @@ if it's not present, don't show loader */
 
 				
 			</div>
-		</div>
 	</section>
 	<!-- End Button -->
 	<!-- Start Align Area -->
-	
-	<div class="whole-wrap animated fadeInLeft delay-1s">
+	<div data-aos="fade-right">
+	<div class="whole-wrap animated fadeInLeft">
 		<div class="container">
 			<div class="section-top-border">
 				<h3>Machine Vision Research Assistant, Dr. Oliveria Lab</h3>
@@ -170,7 +141,10 @@ if it's not present, don't show loader */
 			
 			</div>
 		</div>	
-		<div class="whole-wrap animated fadeInRight delay-2s">
+	</div>
+
+		<div data-aos="fade-left">
+		<div class="whole-wrap animated fadeInRight">
 		<div class="container">
 			<div class="section-top-border">
 				<h3>Software Developer Internship, Process Fusion Inc.</h3>
@@ -194,8 +168,11 @@ if it's not present, don't show loader */
 			
 			</div>
 		</div>
+	</div>
 
-		<div class="whole-wrap animated fadeInLeft delay-3s">
+
+		<div data-aos="fade-right">
+		<div class="whole-wrap animated fadeInLeft">
 		<div class="container">
 			<div class="section-top-border">
 				<h3>Swim Instructor, North Toronto Christian School</h3>
@@ -214,8 +191,11 @@ if it's not present, don't show loader */
 			
 			</div>
 		</div>
+	</div>
 
-		<div class="whole-wrap animated fadeInRight delay-4s">
+
+		<div data-aos="fade-left">
+		<div class="whole-wrap animated fadeInRight">
 		<div class="container">
 			<div class="section-top-border">
 				<h3>Teacher's Assistant, Spirit of Math Schools</h3>
@@ -233,8 +213,11 @@ if it's not present, don't show loader */
 			
 			</div>
 		</div>
+	</div>
 
-		<div class="whole-wrap animated fadeInLeft delay-5s">
+
+		<div data-aos="fade-right">
+		<div class="whole-wrap animated fadeInLeft">
 		<div class="container">
 			<div class="section-top-border">
 				<h3>Music Therapist Volunteer, Michael Garron Hospital</h3>
@@ -251,6 +234,7 @@ if it's not present, don't show loader */
 			
 			</div>
 		</div>
+	</div>
 	
 		
 
@@ -290,6 +274,31 @@ if it's not present, don't show loader */
 	<script src="vendors/swiper/js/swiper.min.js"></script>
 	<script src="vendors/scroll/jquery.mCustomScrollbar.js"></script>
 	<script src="js/theme.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+    AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 1200, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+  </script>
 </body>
 
 </html>

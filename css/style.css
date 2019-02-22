@@ -103,6 +103,52 @@ button:focus {
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+a { color: white; border-size:1px; }
+.arrow {
+  border-color:white;
+  text-align: center;
+  margin: 8% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/8.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 .typewriter h1 {
   color: #fff;
   width:6.0em;
@@ -113,7 +159,7 @@ button:focus {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   /*letter-spacing: .15em;*/ /* Adjust as needed */
   animation: 
-    typing 1.5s steps(14,end),
+    typing 1s steps(12,end),
     blink-caret .5s step-end infinite;
 }
 
@@ -1006,6 +1052,9 @@ button:focus {
         margin: 0; }
 
 .header-right {
+  color:white;
+  padding-top:20%;
+  padding-bottom:5%;
   padding-left: 20%;
   padding-right: 9.5%; }
   .header-right h1 {
@@ -1053,7 +1102,7 @@ button:focus {
         color: #fff;
         margin-bottom: 30px; }
       .header-right p {
-        color: #fff; }
+        color: blue; }
       .header-right .main_btn {
         color: #fff;
         margin-top: 20px; }
@@ -1186,6 +1235,14 @@ button:focus {
   position: relative;
   z-index: 1;
   min-height: 400px; }
+
+  .hero {
+     background-image: url(img/8.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
 /* End Banner Area css
 ============================================================================================ */
@@ -1453,6 +1510,18 @@ button:focus {
       opacity: 1; }
       .active-gallery-carousel .owl-nav .owl-prev:hover, .active-gallery-carousel .owl-nav .owl-next:hover {
         opacity: .5; }
+
+.experience-title {
+  font-size:100px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.experience-title h1 {
+  font-size:60px;
+}
+
 
 .single-gallery {
   position: relative;
