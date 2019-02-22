@@ -110,12 +110,12 @@ a { color: white; border-size:1px; }
   margin: 8% 0;
 }
 .scroll-bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+  -moz-animation: scrollbounce 2s infinite;
+  -webkit-animation: scrollbounce 2s infinite;
+  animation: scrollbounce 2s infinite;
 }
 
-@keyframes bounce {
+@keyframes scrollbounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
