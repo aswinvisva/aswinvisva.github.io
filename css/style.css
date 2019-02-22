@@ -126,29 +126,7 @@ a { color: white; border-size:1px; }
     transform: translateY(-15px);
   }
 }
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/8.jpg");
 
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
 .typewriter h1 {
   color: #fff;
   width:6.0em;
@@ -1236,13 +1214,37 @@ a { color: white; border-size:1px; }
   z-index: 1;
   min-height: 400px; }
 
-  .hero {
-     background-image: url(img/8.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-section {
+  background: url("banner-img.jpg") 50% no-repeat;
+  background-size: cover;
+ /* height: 60vh;*/
+/*  text-align: center;*/
+/*  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;*/
+}
 
 /* End Banner Area css
 ============================================================================================ */
@@ -1522,7 +1524,10 @@ a { color: white; border-size:1px; }
   font-size:60px;
 }
 
-
+.parallax-window {
+  min-height: 800px;
+  background: transparent;
+}
 .single-gallery {
   position: relative;
   display: inline-block;
@@ -4272,9 +4277,16 @@ h6 {
     .footer-bottom {
       text-align: left !important; } }
 
-.footer-text a,
+.footer-text a {
+  color:grey;
+  font-size:10px;
+}
 .footer-text i {
-  color: #f8b600; }
+  text-align:right;
+  padding-left:30px;
+  color: grey;
+  font-size:12px 
+  }
 
 /* =================================== */
 /*  End Footer Area CSS
