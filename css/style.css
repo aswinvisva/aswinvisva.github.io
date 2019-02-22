@@ -1028,6 +1028,19 @@ a { color: white; border-size:1px; }
         text-transform: uppercase;
         font-size: 12px;
         margin: 0; }
+        .header-left h1 {
+          font-size: 60px;
+          color:white;
+          padding-top:20%;
+          padding-left: 70%;
+          padding-right: 20%;
+          margin-bottom:30px;
+        }
+        .header-left p {
+          color:white;
+          padding-left: 70%;
+          padding-right: 20%;
+        }
 
 .header-right {
   color:white;
@@ -1525,6 +1538,12 @@ a { color: white; border-size:1px; }
 }
 
 .parallax-window {
+  min-height: 800px;
+  background: transparent;
+}
+
+.small-parallax-window {
+  min-width:800px;
   min-height: 800px;
   background: transparent;
 }
