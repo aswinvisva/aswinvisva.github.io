@@ -94,6 +94,20 @@ a {
     }
 }
 
+.img-fluid{
+  max-width:100%;
+  height:auto;
+}
+
+ @media (max-width: 991px) {
+    .img-fluid{
+        max-width:70%;
+        height:auto;
+    } 
+  }
+
+
+
 .row.m0 {
   margin: 0px; }
 
@@ -558,7 +572,7 @@ a { color: white; border-size:1px; }
     background: transparent; }
     .canvus_menu .toggle_icon span {
       height: 2px;
-      width: 30px;
+      width: 40px;
       display: block;
       background: grey;
       cursor: pointer;
@@ -569,7 +583,7 @@ a { color: white; border-size:1px; }
       .canvus_menu .toggle_icon span:before {
         content: "";
         height: 2px;
-        width: 25px;
+        width: 35px;
         display: block;
         background: grey;
         left: 0px;
@@ -582,7 +596,7 @@ a { color: white; border-size:1px; }
       .canvus_menu .toggle_icon span:after {
         content: "";
         height: 2px;
-        width: 20px;
+        width: 30px;
         display: block;
         background: grey;
         left: 0px;
@@ -595,11 +609,12 @@ a { color: white; border-size:1px; }
 
         .side_menu {
   position: fixed;
-  left: -500px;
+  left: -100%;
   top: 0px;
   width: 100%;
-  background: white;
-  max-width: 500px;
+  background: black;
+  max-width: 100%;
+  text-align:center;
   padding: 130px 115px;
   z-index: 999;
   box-shadow: 0px 20px 50px rgba(70, 129, 255, 0.1);
@@ -632,8 +647,8 @@ a { color: white; border-size:1px; }
       .side_menu .menu-left li .dropdown-toggle {
         cursor: pointer;
         font-size: 25px;
-        font-weight: 500;
-        color: #222222;
+        font-weight: 300;
+        color: white;
         -webkit-transition: all 0.3s ease 0s;
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
@@ -656,7 +671,7 @@ a { color: white; border-size:1px; }
         background: #4681ff;
         border-radius: 0px; }
         .side_menu .menu-left li .dropdown-menu a {
-          color: #fff;
+          color: black;
           font-size: 14px; }
         .side_menu .menu-left li .dropdown-menu.show:after {
           content: "\f178";
@@ -1319,6 +1334,19 @@ a { color: white; border-size:1px; }
 .right-content{
   padding-right: 20px;
 }
+ @media (max-width: 991px) {
+.right-content h2{
+  padding-top:20px;
+  font-size:30px;
+  padding-left:20px;
+}
+.right-content p{
+
+  font-size:15px;
+  padding-left:20px;
+}
+}
+
 
 .language-python {
   margin-top:5px;
@@ -1599,6 +1627,13 @@ a { color: white; border-size:1px; }
   min-height: 800px;
   background: transparent;
 }
+
+ @media (max-width: 480px) {
+  .parallax-window {
+   background:transparent !important;
+}
+
+  }
 
 
 .small-parallax-window {
@@ -3952,9 +3987,6 @@ h6 {
     .main_btn:hover img {
       right: -38px; }
 
-@media (max-width: 991px) {
-  .main_btn {
-    font-size:18px; } }
 
 .main_btn2 {
   display: inline-block;
