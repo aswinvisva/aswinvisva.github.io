@@ -1105,7 +1105,6 @@ padding-bottom:10%;
 .top-title h1{
   color:black;
   font-size:40px;
-  font-weight:5 !important;
 
 }
 
@@ -2001,6 +2000,17 @@ margin: auto;
   width:100%;
 }
 
+@media (max-width: 991px) {
+    .desktop-projects {
+      
+      display:none; } }
+
+@media (min-width: 991px) {
+    .mobile-projects {
+      
+      display:none; } }
+
+
 .single-blog {
   background:white;
   border: 1px solid grey;
@@ -2011,7 +2021,7 @@ margin: auto;
    }
   @media (max-width: 991px) {
     .single-blog {
-      display:none;
+      
       margin-bottom: 30px; } }
   .single-blog .blog-thumb {
     position: relative;
