@@ -247,6 +247,16 @@ a { color: white; border-size:1px; }
     .main_title h3 {
     font-size:50px; }
 
+
+.projects-title-bg-black {
+  color:white;
+}
+
+.projects-title-bg-black h2 {
+  color:white;
+}
+
+
   .animation-box {
   width: 75%;
   height: 27.5rem;
@@ -1978,6 +1988,25 @@ margin: auto;
 
 /* Start Blog Area css
 ============================================================================================ */
+.projects-area-bg-black {
+  color:white;
+  background-color:black;
+  margin-bottom:20px;
+}
+
+.projects-area-bg-orange {
+  background-color:#e9967a;
+  margin-bottom:20px;
+}
+
+.projects-area-bg-green {
+  background-color: rgb(56, 148, 56);
+  margin-bottom:20px;
+}
+
+
+
+
 .blog-area {
   position: relative; }
   .blog-area:before {
@@ -1998,6 +2027,10 @@ margin: auto;
 .img-fluid-blog{
   max-height:auto;
   width:100%;
+}
+.mobile-projects {
+  margin-left:20px;
+  margin-right:20px;
 }
 
 @media (max-width: 991px) {
@@ -2061,6 +2094,9 @@ margin: auto;
       .single-blog .blog-details h5 a {
         color: black;
         font-size: 25px;
+        line-height: 27px; }
+        .single-blog .blog-details p a {
+        color: black;
         line-height: 27px; }
   .single-blog:hover {
     box-shadow: 0 10px 30px black;
