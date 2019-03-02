@@ -2039,7 +2039,7 @@ margin: auto;
         height: 100%; } }
 
 .img-fluid-blog{
-  max-height:auto;
+  height:100%;
   width:100%;
 }
 .mobile-projects {
@@ -2065,6 +2065,12 @@ margin: auto;
 }
 .showcaseditem-3 {
   background-color:#CF5C36;
+}
+.fixedheight {
+  height:570px;
+}
+.fixedheight2 {
+  height:450px;
 }
 
 
