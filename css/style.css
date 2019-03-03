@@ -679,7 +679,7 @@ a { color: white; border-size:1px; }
   .side_menu .logo h1 {
     margin-bottom: 70px;
     padding-bottom:20px;
-    font-size:40px;
+    font-size:20px;
     color:white;
     border-bottom: 1px solid white; }
     @media (max-width: 991px) {
@@ -699,10 +699,10 @@ a { color: white; border-size:1px; }
         margin-bottom: 0px; }
       .side_menu .menu-left li a,
       .side_menu .menu-left li .dropdown-toggle {
-        line-height:1.2em;
+        line-height:1.4em;
         cursor: pointer;
         font-weight:bold;
-        font-size: 80px;
+        font-size: 50px;
         font-weight: bold;
         color: white;
         -webkit-transition: all 0.3s ease 0s;
