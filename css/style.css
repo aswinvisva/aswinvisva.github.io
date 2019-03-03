@@ -161,6 +161,7 @@ a { color: white; border-size:1px; }
 }
 
 
+
 .typewriter h1 {
   color: #fff;
   width:6.0em;
@@ -587,13 +588,14 @@ a { color: white; border-size:1px; }
 /*  Start Header Area CSS
 /* =================================== */
 .canvus_menu {
-  overflow: hidden;
-  position: fixed;
+  background:transparent;
+  /*overflow: hidden;*/
+  position: absolute;
   left: 0px;
   top: 0px;
   z-index: 10;
   min-height: 80px;
-  width: 100%; }
+  width: 62%; }
   .canvus_menu .toggle_icon {
     cursor: pointer;
     position: relative;
@@ -614,46 +616,56 @@ a { color: white; border-size:1px; }
       display: block;
       background: grey;
       cursor: pointer;
-      -webkit-transition: all 0.5s ease-in-out;
-      -moz-transition: all 0.5s ease-in-out;
-      -o-transition: all 0.5s ease-in-out;
-      transition: all 0.5s ease-in-out; }
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
       .canvus_menu .toggle_icon span:before {
         content: "";
         height: 2px;
-        width: 35px;
+        width: 40px;
         display: block;
         background: grey;
         left: 0px;
         top: 20px;
         position: absolute;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
       .canvus_menu .toggle_icon span:after {
         content: "";
         height: 2px;
-        width: 30px;
+        width: 40px;
         display: block;
         background: grey;
         left: 0px;
         bottom: 8px;
         position: absolute;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+    .toggle_icon span:hover {
+      width:30px;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+    }
+
+
+
 
         .side_menu {
+          background-color:#153243;
   position: fixed;
   left: -100%;
-  top: 0px;
   width: 100%;
-  background: white;
+  height:100%;
   max-width: 100%;
   text-align:center;
-  padding: 130px 115px;
+  padding: 115px;
   z-index: 999;
   box-shadow: 0px 20px 50px rgba(70, 129, 255, 0.1);
   -webkit-transition: all 0.3s ease 0s;
@@ -664,8 +676,12 @@ a { color: white; border-size:1px; }
     .side_menu {
       max-width: 100%;
       padding: 20px 15px; } }
-  .side_menu .logo {
-    margin-bottom: 100px; }
+  .side_menu .logo h1 {
+    margin-bottom: 70px;
+    padding-bottom:20px;
+    font-size:40px;
+    color:white;
+    border-bottom: 1px solid white; }
     @media (max-width: 991px) {
       .side_menu .logo {
         margin-bottom: 30px; } }
@@ -683,17 +699,24 @@ a { color: white; border-size:1px; }
         margin-bottom: 0px; }
       .side_menu .menu-left li a,
       .side_menu .menu-left li .dropdown-toggle {
+        line-height:1.2em;
         cursor: pointer;
-        font-size: 25px;
-        font-weight: 300;
-        color: black;
+        font-weight:bold;
+        font-size: 80px;
+        font-weight: bold;
+        color: white;
         -webkit-transition: all 0.3s ease 0s;
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
         .side_menu .menu-left li a:hover,
         .side_menu .menu-left li .dropdown-toggle:hover {
-          color: rgb(230,230,250 ); }
+          background:white;
+          color: #153243;
+          -webkit-transition: all 0.3s ease 0s;
+           -moz-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+           transition: all 0.3s ease 0s; }
       .side_menu .menu-left li .dropdown-toggle {
         background: transparent;
         border: 0;
@@ -710,7 +733,7 @@ a { color: white; border-size:1px; }
         border-radius: 0px; }
         .side_menu .menu-left li .dropdown-menu a {
           color: black;
-          font-size: 14px; }
+          font-size: 14px;}
         .side_menu .menu-left li .dropdown-menu.show:after {
           content: "\f178";
           font: normal normal normal 14px/1 FontAwesome;
@@ -725,8 +748,8 @@ a { color: white; border-size:1px; }
           transform: scaleX(3); }
         .side_menu .menu-left li .dropdown-menu .dropdown-item {
           background: transparent; }
-          .side_menu .menu-left li .dropdown-menu .dropdown-item:hover {
-            opacity: 0.7; }
+          /*.side_menu .menu-left li .dropdown-menu .dropdown-item:hover {
+            opacity: 0.7; }*/
 
 .open .side_menu {
   left: 0px; }
@@ -734,7 +757,7 @@ a { color: white; border-size:1px; }
   z-index: 999;
   position: fixed; }
   .open .canvus_menu .toggle_icon {
-    left: 50px; }
+    /*left: 50px;*/ }
     @media (max-width: 1440px) {
       .open .canvus_menu .toggle_icon {
         left: 240px; } }
@@ -744,6 +767,7 @@ a { color: white; border-size:1px; }
     .open .canvus_menu .toggle_icon span {
       background: transparent !important; }
       .open .canvus_menu .toggle_icon span:before {
+        background: white;
         width: 25px;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
@@ -752,11 +776,12 @@ a { color: white; border-size:1px; }
         transform: rotate(45deg);
         top: 9px;
         left: 3px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
       .open .canvus_menu .toggle_icon span:after {
+        background: white;
         width: 25px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
@@ -765,35 +790,13 @@ a { color: white; border-size:1px; }
         transform: rotate(-45deg);
         left: 3px;
         top: 9px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
 
 
 /*//preloader*/
-  .loader{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #f7f7f7;
-    z-index: 999999;
-
-    .loader-inner {
-      position: absolute;
-      border: 2px solid $color-primary;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      left: calc(50% - 20px);
-      top: calc(50% - 20px);
-      border-right: 0;
-      border-top-color: transparent;
-      -webkit-animation: loader-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
-      animation: loader-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
-    }
-  }
 
   @-webkit-keyframes loader-outter {
     0% {
@@ -843,6 +846,7 @@ a { color: white; border-size:1px; }
   border-bottom: 1px solid white; }
 
 .site-navbar {
+  display:none;
   margin-bottom: 0px;
   width: 100%;
   border-bottom: none;
@@ -3645,6 +3649,7 @@ h6 {
   padding-right: 40px; }
 
 .default-select .nice-select .list {
+  background:transparent;
   margin-top: 0;
   border: none;
   border-radius: 0px;
