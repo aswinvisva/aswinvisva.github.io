@@ -672,10 +672,10 @@ a { color: white; border-size:1px; }
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
-  @media (max-width: 575px) {
+ /* @media (max-width: 575px) {
     .side_menu {
       max-width: 100%;
-      padding: 20px 15px; } }
+      padding: 20px 15px; } }*/
   .side_menu .logo h1 {
     margin-bottom: 70px;
     padding-bottom:20px;
@@ -758,12 +758,12 @@ a { color: white; border-size:1px; }
   position: fixed; }
   .open .canvus_menu .toggle_icon {
     /*left: 50px;*/ }
-    @media (max-width: 1440px) {
+    /*@media (max-width: 1440px) {
       .open .canvus_menu .toggle_icon {
         left: 240px; } }
     @media (max-width: 575px) {
       .open .canvus_menu .toggle_icon {
-        left: 240px; } }
+        left: 240px; } }*/
     .open .canvus_menu .toggle_icon span {
       background: transparent !important; }
       .open .canvus_menu .toggle_icon span:before {
