@@ -711,6 +711,8 @@ a { color: white; border-size:1px; }
         transition: all 0.3s ease 0s; }
         .side_menu .menu-left li a:hover,
         .side_menu .menu-left li .dropdown-toggle:hover {
+          padding-left:20px;
+          padding-right:20px;
           background:white;
           color: #153243;
           -webkit-transition: all 0.3s ease 0s;
