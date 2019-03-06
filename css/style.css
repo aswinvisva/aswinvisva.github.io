@@ -1952,6 +1952,7 @@ margin: auto;
         color: white;
         line-height: 27px; }
   .single-blog:hover {
+    transform: translateY(-10px);
     box-shadow: 0 10px 30px black;
     border: 1px solid black; }
     .single-blog:hover .blog-thumb:before {
@@ -2061,13 +2062,13 @@ margin: auto;
 
       
 
-       .single-blog:hover h2 {
+       /*.single-blog:hover h2 {
           transform: translateY(-5px);
           -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
   -o-transition: all 0.1s ease 0s;
   transition: all 0.1s ease 0s;
-       }
+       }*/
 
 
 
