@@ -901,8 +901,8 @@ a { color: white; border-size:1px; }
 }
 
 .experiences_container:hover h3{
+  
   transform:translateY(-5px);
-  font-weight:bold;
   -webkit-transition: all 0.1s ease 0s;
            -moz-transition: all 0.1s ease 0s;
             -o-transition: all 0.1s ease 0s;
@@ -910,7 +910,7 @@ a { color: white; border-size:1px; }
 
 }
 .experiences_container:hover p {
-  
+  transform:translateY(5px);
   -webkit-transition: all 0.2s ease 0s;
            -moz-transition: all 0.2s ease 0s;
             -o-transition: all 0.2s ease 0s;
@@ -1723,11 +1723,13 @@ background:rgb(230,230,250 );
   font-size:100px;
   padding-top: 100px;
   padding-bottom: 40px;
+  
   text-align: center;
 }
 
 .experience-title h1 {
-  font-size:60px;
+  font-size:80px;
+  font-weight:bold;
 }
 
 .parallax-window {
@@ -1825,6 +1827,13 @@ margin: auto;
 .projects-area-bg-5 {
   background-color:#153243;
   margin-bottom:20px;
+}
+
+.showcaseditem-4 {
+  background-color:#1B1B1E;
+}
+.showcaseditem-5 {
+    background-color:#FFFCF7;
 }
 
 
@@ -1947,6 +1956,118 @@ margin: auto;
     border: 1px solid black; }
     .single-blog:hover .blog-thumb:before {
       left: -130%; }
+
+      .single-blog .blog-details h3 {
+        color: white;
+        line-height: 27px;
+       }
+       .single-blog:hover p {
+        /*transform: translateY(5px);*/
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  -o-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+       }
+
+       .gridspace1{
+        margin-left:19%;
+        margin-right:19%;
+
+       }
+       
+
+      .griditem-wide {
+        padding-top:80px;
+        padding-left:100px;
+        padding-right:100px;
+        
+        height:600px;
+        width:1200px;
+      }
+
+       .griditem-wide  h1{
+        color:white;
+        font-size:50px;
+      }
+
+      .griditem-wide  h3{
+        color:white;
+        font-size:20px;
+        padding-bottom:40px;
+      }
+
+      .griditem-wide img{
+        
+        padding-bottom:40px;
+      }
+
+      .griditem-wide:hover img{
+        
+        transform: translateY(5px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+
+      .griditem-wide p{
+        color:white;
+        font-size:20px;
+      }
+
+      .griditem-wide:hover p{
+        transform: translateY(8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+      .griditem-wide:hover h3{
+        transform: translateY(-8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+      .griditem-wide:hover h1{
+        transform: translateY(-8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+
+      
+
+      .griditem-small {
+        padding-top:80px;
+        padding-left:20px;
+        padding-right:20px;
+        width:600px;
+        height:600px;
+        display:inline-block;
+      }
+
+      .griditem-small h1{
+        color:white;
+        font-size:50px;
+      }
+
+      .griditem-small h3 {
+        color:white;
+        font-size:20px;
+        padding-bottom:40px;
+      }
+
+      
+
+       .single-blog:hover h2 {
+          transform: translateY(-5px);
+          -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  -o-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+       }
 
 
 
