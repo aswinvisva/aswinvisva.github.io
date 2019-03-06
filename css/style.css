@@ -1729,7 +1729,7 @@ background:rgb(230,230,250 );
 
 .experience-title h1 {
   font-size:80px;
-  font-weight:bold;
+  font-weight:300;
 }
 
 .parallax-window {
@@ -2011,6 +2011,15 @@ margin: auto;
   transition: all 0.2s ease 0s;
       }
 
+      .griditem-small:hover img{
+        
+        transform: translateY(5px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+
       .griditem-wide p{
         color:white;
         font-size:20px;
@@ -2038,6 +2047,28 @@ margin: auto;
   transition: all 0.2s ease 0s;
       }
 
+      .griditem-small:hover p{
+        transform: translateY(8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+      .griditem-small:hover h3{
+        transform: translateY(-8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+      .griditem-small:hover h1{
+        transform: translateY(-8px);
+        -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+      }
+
       
 
       .griditem-small {
@@ -2046,18 +2077,29 @@ margin: auto;
         padding-right:20px;
         width:600px;
         height:600px;
-        display:inline-block;
+        display:inline-table;
+        margin-left:-1px;
+        margin-right: -2px
+      }
+        .griditem-small img{
+        
+        padding-bottom:40px; 
       }
 
       .griditem-small h1{
         color:white;
         font-size:50px;
+
       }
 
       .griditem-small h3 {
         color:white;
         font-size:20px;
         padding-bottom:40px;
+      }
+      .griditem-small p{
+        color:white;
+        font-size:15px;
       }
 
       
