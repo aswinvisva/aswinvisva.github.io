@@ -2026,21 +2026,21 @@ margin: auto;
       }
 
       .griditem-wide:hover p{
-        transform: translateY(8px);
+        transform: translateY(10px);
         -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
       }
       .griditem-wide:hover h3{
-        transform: translateY(-8px);
+        transform: translateY(-10px);
         -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
       }
       .griditem-wide:hover h1{
-        transform: translateY(-8px);
+        transform: translateY(-10px);
         -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
@@ -2048,7 +2048,7 @@ margin: auto;
       }
 
       .griditem-small:hover p{
-        transform: translateY(8px);
+        transform: translateY(10px);
         -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
