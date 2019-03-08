@@ -257,11 +257,11 @@ a { color: white; border-size:1px; }
 
 
 .projects-title-bg-black {
-  color:white;
+  color:black;
 }
 
 .projects-title-bg-black h2 {
-  color:white;
+  color:black;
 }
 
 
@@ -1548,7 +1548,9 @@ background:rgb(230,230,250 );
     position: relative; }
     @media (max-width: 1024px) {
       .popular-place-area .left-content img {
-        max-width: 80%; }
+        box-shadow: 0 15px 30px black;
+        max-width: 80%;
+         }
       .popular-place-area .left-content .img2 {
         max-width: 50%;
         top: 5% !important; }
@@ -1571,8 +1573,22 @@ background:rgb(230,230,250 );
     margin-left: 15px; }
 
 .right-content{
-  padding-right: 20px;
+  font-size:20px;
+  border-radius:8px;
+  border-color:grey;
+  background-color:white;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:30px;
+  padding-bottom:30px;
+  margin-right:40px;
+  box-shadow: 0 15px 30px black;
 }
+
+.right-content h2 {
+  padding-bottom:20px;
+}
+
  @media (max-width: 991px) {
 .right-content h2{
   padding-top:20px;
@@ -4108,8 +4124,8 @@ h6 {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s; }
   .main_btn:hover {
-    background:#A9BCD0;
-    color: #222222;
+    background:#1B1B1E;
+    color: white;
     border: 1px solid rgb(230,230,250 ) ; }
     .main_btn:hover img {
       right: -38px; }
