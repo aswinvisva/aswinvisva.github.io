@@ -1585,6 +1585,13 @@ background:rgb(230,230,250 );
   box-shadow: 0 15px 30px black;
 }
 
+.right-content h2 a{
+  color:black;
+
+}
+.right-content h2 a:hover {
+  text-decoration:underline;
+}
 .right-content h2 {
   padding-bottom:20px;
 }
