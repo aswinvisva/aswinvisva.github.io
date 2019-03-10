@@ -786,7 +786,11 @@ a { color: white; border-size:1px; }
         transition: all 0.05s ease-in-out; }
 
      
+        .myLogo {
+            border-bottom: 1px solid white;
+            padding-bottom:5px;
 
+        }
 
         .side_menu {
           background-color:#153243;
@@ -809,7 +813,7 @@ a { color: white; border-size:1px; }
       padding: 20px 15px; } }*/
   .side_menu .logo h1 {
     margin-bottom: 70px;
-    padding-bottom:20px;
+    padding-top:20px;
     font-size:20px;
     color:white;
     border-bottom: 1px solid white; }
@@ -817,6 +821,7 @@ a { color: white; border-size:1px; }
       .side_menu .logo {
         margin-bottom: 30px; } }
   .side_menu .menu-left {
+    margin-top:60px;
     max-height: 420px; }
     @media (max-width: 1440px) {
       .side_menu .menu-left {
@@ -826,11 +831,13 @@ a { color: white; border-size:1px; }
        }
       @media (max-width: 1440px) {
         .side_menu .menu-left li {
-          margin-bottom: 15px; } }
+          margin-bottom: 15px;
+          } }
       .side_menu .menu-left li:last-child {
         margin-bottom: 0px; }
       .side_menu .menu-left li a,
       .side_menu .menu-left li .dropdown-toggle {
+         padding-top:10px;
         line-height:1.4em;
         cursor: pointer;
         font-weight:bold;
@@ -1831,25 +1838,25 @@ margin: auto;
 .projects-area-bg-1 {
   color:white;
   background-color:#1B1B1E;
-  margin-bottom:20px;
+ /* margin-bottom:20px;*/
 }
 
 .projects-area-bg-2 {
   background-color:#FFFCF7;
-  margin-bottom:20px;
+  /*margin-bottom:20px;*/
 }
 
 .projects-area-bg-3 {
   background-color:#CF5C36;
-  margin-bottom:20px;
+  /*margin-bottom:20px;*/
 }
 .projects-area-bg-4 {
   background-color:#A9BCD0;
-  margin-bottom:20px;
+  /*margin-bottom:20px;*/
 }
 .projects-area-bg-5 {
   background-color:#153243;
-  margin-bottom:20px;
+  /*margin-bottom:20px;*/
 }
 
 .showcaseditem-4 {
