@@ -80,8 +80,9 @@ li {
 }
 
 .icon-picture {
-  height:50px;
-  width:50px;
+  height:40px;
+  width:40px;
+  padding-top: 30px;
   display:flex;
   display: inline-block;
 }
