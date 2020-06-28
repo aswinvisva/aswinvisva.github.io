@@ -34,11 +34,8 @@ function get_github_repos() {
 
 
         divElement.setAttribute('class', 'project-area   featured-projects animated fadeInUp');
-        blog_div.setAttribute('class', 'single-blog showcaseditem-1');
+        blog_div.setAttribute('class', 'single-blog showcaseditem-1 justify-content-center');
         blog_details.setAttribute('class', 'blog-details');
-
-        blog_div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
 
         // Adding a paragraph to it
         var paragraph = document.createElement("P");
@@ -50,14 +47,19 @@ function get_github_repos() {
         heading.appendChild(name);
         paragraph.appendChild(text);
 
-        heading.style.paddingBottom = "120px"
-        heading.style.paddingTop = "20px"
+        heading.style.paddingBottom = "120px";
+        heading.style.paddingTop = "20px";
+        heading.style.paddingLeft = "20px";
         heading.style.fontSize = "100px";
         heading.style.lineHeight = "75pt";
+        heading.style.overflowWrap = "break-word";
 
         paragraph.style.lineHeight = "45pt";
 
+        blog_div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         blog_div.style.fontSize = "40px";
+        blog_div.style.borderRadius = "20px";
+        // blog_div.style.width = "50%";
 
         blog_details.appendChild(heading);
         blog_details.appendChild(paragraph);
