@@ -55,6 +55,7 @@ function get_github_repos() {
         heading.style.overflowWrap = "break-word";
 
         paragraph.style.lineHeight = "45pt";
+        paragraph.style.paddingLeft = "20px";
 
         blog_div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         blog_div.style.fontSize = "40px";
