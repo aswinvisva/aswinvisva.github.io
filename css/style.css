@@ -329,8 +329,25 @@ a {
 }
 
 .main_title h3 {
-    font-size: 150px;
+    /* font-size: 150px; */
+    font-size: 10vw;
     font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .main_title h3 {
+        /* font-size: 150px; */
+        font-size: 10vw;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 991px) {
+    .main_title p {
+        /* font-size: 150px; */
+        text-align: center;
+    }
 }
 
 .projects-title-bg-black {
