@@ -176,14 +176,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #2b2b2b;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #0056b3;
+    color: #888888;
     text-decoration: underline
 }
 
@@ -4579,7 +4579,7 @@ input[type=submit].btn-block {
 }
 
 .navbar-dark .navbar-text a {
-    color: #fff
+    color: #777777
 }
 
 .navbar-dark .navbar-text a:focus,
@@ -9234,8 +9234,8 @@ a.text-dark:hover {
 
 @media print {
     *,
-    ::after,
-    ::before {
+     ::after,
+     ::before {
         text-shadow: none !important;
         box-shadow: none !important
     }
@@ -9310,5 +9310,6 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */
