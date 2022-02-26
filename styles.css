@@ -11,8 +11,27 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 !important;
     padding: 0 !important;
-    background-color: #F7F5F5;
+    background-color: white;
 }
+
+/* Nav */
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+li.nav {
+    float: left;
+    padding-right: 16px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover nav {
+    background-color: #111;
+} */
 
 /* Backgrounds */
 
@@ -46,7 +65,12 @@ body {
 
 /* Text */
 
+hr {
+    border-color: #fdfdfd;
+}
+
 a {
+    color: #0054D2;
     text-decoration: none;
 }
 
@@ -57,6 +81,20 @@ a:focus {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     text-decoration: underline;
+    outline: none;
+}
+
+a.project {
+    color: #393939;
+    text-decoration: none;
+}
+
+a.project:hover,
+a.project:focus {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     outline: none;
 }
 
@@ -81,7 +119,11 @@ a:focus {
 }
 
 .grey-text {
-    color: #252525
+    color: #393939
+}
+
+.light-grey-text {
+    color: #979797
 }
 
 .light-text {
@@ -117,8 +159,15 @@ a:focus {
 }
 
 .smaller-text {
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 30px;
 }
+
+.smallest-text {
+    font-size: 18px;
+    line-height: 27px;
+}
+
 
 .align-center {
     text-align: center;
@@ -157,13 +206,21 @@ li:not(:last-child) {
 }
 
 .flex-width {
-    width: 50%;
+    width: 40%;
     margin: auto;
+}
+
+@media (max-width: 1500px) {
+    .flex-width {
+        width: 60%;
+        margin: auto;
+    }
 }
 
 @media (max-width: 991px) {
     .flex-width {
-        width: 100%;
+        width: 80%;
+        margin: auto;
     }
 }
 
@@ -231,13 +288,34 @@ li:not(:last-child) {
     display: inline;
 }
 
+.block {
+    display: block;
+}
+
+.baseline {
+    vertical-align: baseline;
+    margin-top: 23px
+}
+
 /* Containers */
 
 .small-container {
-    /* border-style: solid;
-    border-color: #FF5F2D;
-    background-color: #FF5F2D; */
-    padding: 10px;
-    width: max(min(50%, 800px), 560px);
-    margin: auto;
+    border-style: solid;
+    border-color: #ffff;
+    background-color: #ffff;
+    padding: 20px;
+    width: 95%;
+    transition: 0.3s;
+    /* -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%); */
+}
+
+.small-container:hover {
+    background-color: #f7f7f7;
+    border-color: #f7f7f7;
+}
+
+/* Images */
+
+.showcase-image {
+    width: min(100%, 750px);
 }

@@ -1,0 +1,78 @@
+<!-- Ⓒ Aswin Visva 2022 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aswin Visva</title>
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000000%22></rect><path d=%22M45.25 70.97L41.24 60.03L23.67 60.03L19.72 70.97L14.02 70.97L30.04 29.03L34.88 29.03L50.92 70.97L45.25 70.97ZM32.46 35.85L25.34 55.47L39.60 55.47L32.46 35.85ZM56.02 29.03L67.95 63.63L79.93 29.03L85.98 29.03L70.43 70.97L65.53 70.97L50 29.03L56.02 29.03Z%22 fill=%22%23ffffff%22></path></svg>" />
+    </head>
+  </head>
+  <body>
+    <div class="grey-text flex-width padding-40 ">
+        <header class = "padding-bottom-40 padding-top-20 table align-left">
+            <a href="../new_index.html" class="grey-text light-text small-text">Aswin Visva</a>
+        </header>
+        <nav class="table align-right baseline">
+            <a class="nav grey-text light-text smallest-text inline" href="projects_home.html" >Projects</a>
+        </nav>
+        <div class="clear"></div>
+        <div class="padding-top-10">
+            <h1 class="light-text small-text">
+                2D Lidar SLAM with a Mobile Robot
+            </h1>
+            <h1 class="light-text smaller-text">
+                February 2022
+            </h1>
+            <hr></hr>
+        </div>
+        <div class="padding-top-10">
+            <div class="align-center padding-bottom-10">
+                <img src="../images/slam_map.gif" alt="2D Lidar SLAM" class="showcase-image">
+            </div>
+            <h3 class="light-text smaller-text">
+                SLAM is an algorithm used in robotics to map an unknown environment while also localizing its position within said map. There are many variants of SLAM for different modalities, including monocular SLAM, RGB-D SLAM, stereo SLAM, etc. In this project, I opted to implement occupancy grid SLAM, I’ll touch on this a bit more later.
+            </h3>
+            <h3 class="light-text small-text">Hardware</h3>
+            <h3 class="light-text smaller-text">
+                From the hardware side, I bought a <a href="https://www.ydlidar.com/products/view/6.html" class="light-text smaller-text">2D, 360-degree Lidar</a> and strapped it to the back of a small robot chassis I found on Amazon. Everything was tied together with the small, but powerful, Jetson Nano computer. The robot was powered by two servos in the rear of the chassis and was be controlled from the software side using the <a href="https://circuitpython.readthedocs.io/projects/servokit/en/latest/" class="light-text smaller-text">Adafruit ServoKit Python API</a>. 
+            </h3>
+            <div class="align-center padding-bottom-10">
+                <img src="../images/robot.jpg" alt="Hardware" class="showcase-image">
+            </div>
+            <h3 class="light-text smallest-text"><b>Image Description:</b> The assembled robot.</h3>
+            <h3 class="light-text small-text">Software</h3>
+            <h3 class="heavy-text smaller-text">Lidar Odometry</h3>
+            <h3 class="light-text smaller-text">
+                In order to map a robot’s environment, we must first have an understanding of its relative position and orientation so we can align and merge the point clouds appropriately. This is called “odometry” - finding the relative motion between consecutive frames, and it allows us to have an understanding of the robot’s trajectory as it moves throughout its environment. I opted to use one of the more common techniques for Lidar odometry called <a href="https://en.wikipedia.org/wiki/Iterative_closest_point" class="light-text smaller-text">Iterative Closest Point</a>, a method that aims to find the transformation which aligns a source point cloud with a target point cloud as closely as possible. This algorithm iteratively minimizes some error function using gradient descent.
+            </h3>
+            <h3 class="heavy-text smaller-text">Occupancy Grid</h3>
+            
+            <h3 class="light-text smaller-text">
+                We can model a robot’s environment using a discrete grid representation, where each grid cell represents a distance bucket in the map. Cells can be in one of two states, either occupied or not occupied, where an occupied cell is one that contains an object or boundary and stops Lidar rays from extending beyond it. In every frame, we predict whether the cells in the current lidar FOV are occupied or empty, and we update our map accordingly. This method provides robustness to object movement and sensor noise.
+            </h3>
+
+            <h3 class="light-text small-text">Source Code</h3>
+
+            <a href="https://github.com/aswinvisva/slam_bot_nano" class="light-text smaller-text">Find the code here</a>
+        </div>
+    </div>
+
+    <div class="align-center grey-background padding-top-10 padding-bottom-10 full-width">
+        <div class = "inline">
+            <p class="white-text heavy-text">
+            <a href="mailto:aavisva@uwaterloo.ca?subject=Hey!" class="white-text light-text padding-right-10">
+                Email
+            </a>
+            <a href="https://github.com/aswinvisva" class="white-text light-text padding-right-10">
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/aswinvisva/" class="white-text light-text padding-right-10">
+                Linkedin
+            </a>
+            © Aswin Visva 2022</p>
+        </div>
+    </div>
+  </body>
+</html>
