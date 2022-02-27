@@ -28,18 +28,32 @@
             <hr></hr>
         </div>
         <div class="padding-top-10">
+            <div class="align-center padding-bottom-10 padding-top-10">
+                <img src="../images/lane_line_detection.gif" alt="Image Surface" class="showcase-image">
+            </div>
             <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lane line detection is an important output of an autonomous vehicle’s perception system to be used as inputs for path planning algorithms among other important tasks. This project involves training U-Net, a convolutional neural network designed for medical image segmentation, on the CULane dataset to segment lane lines from images. 
             </h3>
-            <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h3 class="light-text small-text">Generating training data</h3>
+            <h3 class="light-text smaller-text padding-bottom-10">
+                The CULane dataset was annotated in a .txt file containing the (x, y) coordinates of points on the lane line. I generated the segmentation masks by filling pixels along this line with a value of 1, denoting that the pixel contains a lane line marking. This can be done with the following pseudocode.
             </h3>
-            <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <pre><code>
+                for pointa, pointb in points:
+                    drawline(segmentation_mask, pointa, pointb, width=x)
+            </code></pre>
+            <h3 class="light-text small-text">Training U-Net</h3>
+            <div class="align-center padding-bottom-10 padding-top-10">
+                <img src="../images/unet.png" alt="Image Surface" class="showcase-image">
+            </div>
+            <h3 class="light-text smallest-text"><b>Image Description:</b> U-Net architecture <a href="https://www.researchgate.net/figure/U-net-architecture-for-the-forest-types-segmentation-adapted-from-Ronneberger-et-al_fig3_331549658">[source]</a></h3>
+
+            <h3 class="light-text smaller-text padding-bottom-10">
+                We can visualize the architecture of U-Net above, the architecture consists of several convolutional blocks downsampled using max pool operations and upsampled using interpolation-based upsampling. The output is a tensor of the same height and width as the input, but the channels denote the segmentation masks. With the training data above, it was fairly straightforward to translate U-Net from medical applications to the domain of autonomous vehicles.
             </h3>
-            <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </h3>
+            <h3 class="light-text small-text">Source Code</h3>
+
+            <a href="https://github.com/aswinvisva/lane_line_detector" class="light-text smaller-text">Find the code here</a>
         </div>
     </div>
 

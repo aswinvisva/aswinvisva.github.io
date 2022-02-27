@@ -14,6 +14,18 @@ body {
     background-color: white;
 }
 
+table, th, td {
+    padding: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+code {
+    font-size: 17px;
+}
+
 /* Nav */
 
 ul.nav {
@@ -212,7 +224,7 @@ li:not(:last-child) {
 
 @media (max-width: 1500px) {
     .flex-width {
-        width: 60%;
+        width: 50%;
         margin: auto;
     }
 }

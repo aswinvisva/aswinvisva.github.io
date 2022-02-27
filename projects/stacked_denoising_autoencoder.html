@@ -28,18 +28,108 @@
             <hr></hr>
         </div>
         <div class="padding-top-10">
+            <h3 class="light-text small-text">Background</h3>
             <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Log anomaly detection can be described as the process of identifying anomalous messages from system logs automatically, helping system analysts quickly debug critical failures in their software. There have been many past approaches to log anomaly detection, such as <a href="https://dl.acm.org/doi/pdf/10.1145/3133956.3134015" class="light-text smaller-text">DeepLog - an LSTM based deep neural network </a>. In this project, I tried my own approach to tackle log anomaly detection on the HDFS logs dataset provided by LOGPAI.
+            </h3>
+            <h3 class="light-text small-text">Approach</h3>
+            <h3 class="light-text smaller-text">
+                Log files contain several sequences of execution grouped by their session ID; these sequences contain several log messages which may or may not be anomalous. We can numerically represent a given sequence by a vector containing the counts of each unique log message type, to create a vector of size, M, where there are M unique log message types. 
             </h3>
             <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Latent Dirichlet Allocation is a statistical model which aims to find a discrete probability distribution over a set of arbitrary “topics” to group sets of “documents”. In this case, log sequences were treated as “documents” and the probability vectors over the set of topics were treated as features for these log sequences. These features were passed to a fully-connected autoencoder to encode these probability vectors in latent space, learning relationships between the given sets of topics.
             </h3>
+            <div class="align-center padding-bottom-10 padding-top-10">
+                <img src="../images/model_architecture.png" alt="Image Surface" width="500px">
+            </div>
+            <h3 class="light-text smallest-text"><b>Image Description:</b> Proposed model architecture.</h3>
+            <h3 class="light-text small-text padding-top-10">Data</h3>
             <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                This model was trained on completely normal log sequences and evaluated on log sequences containing both normal and anomalous messages. The idea is that the model would learn to only represent normal sequences and thus, anomalous sequences would incur a high reconstruction loss. Thresholds were applied to the reconstruction loss to classify anomalous sequences from normal ones.
             </h3>
+            <table class="align-center">
+                <tr>
+                  <th></th>
+                  <th>Number of sessions</th>
+                </tr>
+                <tr>
+                  <td>Train Set</td>
+                  <td>279127 normal</td>
+                </tr>
+                <tr>
+                  <td>Test Set</td>
+                  <td>
+                    279096 normal<br></br>
+                    8435 anomaly                    
+                  </td>
+                </tr>
+            </table>
+            <h3 class="light-text smallest-text"><b>Table 1:</b> Data distributions.</h3>
+            
+            <h3 class="light-text small-text padding-top-10">Results</h3>
+            <div class="align-center padding-bottom-10">
+                <img src="../images/pr_curve.png" alt="Optical Flow Formula" class="showcase-image">
+            </div>
+            <h3 class="light-text smallest-text"><b>Image Description:</b> Precision-Recall Curve over several thresholds.</h3>
+
+            <table>
+                <tr>
+                  <th class="align-left">Model</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1</th>
+                </tr>
+                <tr>
+                  <td>Denoising Autoencoder (This work)</td>
+                  <td>0.983</td>
+                  <td>0.887</td>
+                  <td><b>0.933</b></td>
+                </tr>
+                <tr>
+                    <td>LOF</td>
+                    <td>0.967</td>
+                    <td>0.561</td>
+                    <td>0.710</td>
+                </tr>
+                <tr>
+                    <td>One-Class SVM</td>
+                    <td>0.995</td>
+                    <td>0.222</td>
+                    <td>0.363</td>
+                </tr>
+                <tr>
+                    <td>Isolation Forest</td>
+                    <td>0.830</td>
+                    <td>0.776</td>
+                    <td>0.802</td>
+                </tr>
+                <tr>
+                    <td>PCA</td>
+                    <td>0.975</td>
+                    <td>0.635</td>
+                    <td>0.769</td>
+                </tr>
+                <tr>
+                    <td>Invariants Mining</td>
+                    <td>0.888</td>
+                    <td><b>0.945</b></td>
+                    <td>0.915</td>
+                </tr><tr>
+                    <td>Clustering</td>
+                    <td><b>1.0</b></td>
+                    <td>0.720</td>
+                    <td>0.837</td>
+                </tr>
+            </table>
+            <h3 class="light-text smallest-text"><b>Table 2:</b> Metrics comparison between this work and previous models. <a href="https://github.com/logpai/loglizer">[source]</a></h3>
+
             <h3 class="light-text smaller-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                The results show this model stacks up with other semi-supervised (only trained on normal log sequences) and unsupervised models in terms of precision, recall and f1-score on the HDFS dataset.
             </h3>
+          
+            <h3 class="light-text small-text">Source Code</h3>
+
+            <a href="https://github.com/aswinvisva/dl_log_analysis" class="light-text smaller-text">Find the code here</a>
         </div>
     </div>
 
