@@ -1,0 +1,130 @@
+<!-- Ⓒ Aswin Visva 2022 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aswin Visva</title>
+
+    <head>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000000%22></rect><path d=%22M45.25 70.97L41.24 60.03L23.67 60.03L19.72 70.97L14.02 70.97L30.04 29.03L34.88 29.03L50.92 70.97L45.25 70.97ZM32.46 35.85L25.34 55.47L39.60 55.47L32.46 35.85ZM56.02 29.03L67.95 63.63L79.93 29.03L85.98 29.03L70.43 70.97L65.53 70.97L50 29.03L56.02 29.03Z%22 fill=%22%23ffffff%22></path></svg>"
+        />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    </head>
+</head>
+
+<body>
+    <div class="grey-text flex-width padding-40 ">
+        <header class="padding-bottom-40 padding-top-20 table align-left">
+            <a href="../index.html" class="grey-text light-text small-text">Aswin Visva</a>
+        </header>
+        <nav class="table align-right baseline">
+            <a class="nav grey-text light-text smallest-text inline" href="projects_home.html">Projects</a>
+        </nav>
+        <div class="clear"></div>
+        <div class="padding-top-10">
+            <h1 class="light-text small-text">
+                Actor-Critic Slime Volleyball
+            </h1>
+            <h1 class="light-text smaller-text">
+                August 2022
+            </h1>
+            <hr></hr>
+        </div>
+        <div class="padding-top-10">
+            <div class="align-center padding-bottom-10">
+                <img src="../images/slime_volleyball_aavisva.gif" alt="2D Lidar SLAM" class="showcase-image">
+            </div>
+            <h3 class="light-text smaller-text">
+                <b>This project was my solution as part of the University of Waterloo ECE 457C assignment coursework.</b>
+            </h3>
+            <h3 class="light-text small-text">Introduction</h3>
+            <h3 class="light-text smaller-text">
+                In this project, the actor-critic reinforcement learning method was applied to the slime volleyball environment - a simple 2D game in which two agents compete in order to bounce a ball in the opponent’s half of the court. The state of the environment,
+                \(S_t\), is a 12-dimensional vector representing the X and Y positions and velocities for both players as well as the ball at time step \(t\). The agent can take one of three possible actions at a given state, where each action corresponds
+                to the travel direction - jumping up, moving left, or moving right. The dynamics of the environment are deterministic with respect to the agent’s action. For example, if an agent is currently at the position, \((x,y)\) with no velocity,
+                and the agent takes the action to move to the right, then the dynamics are \(p(s^\prime = (x+distance, y, ...) | s = (x, y, ...), a = right) = 1\).
+            </h3>
+
+            <h3 class="light-text small-text">Advantage Actor-Critic</h3>
+            <h3 class="light-text smaller-text">
+                The algorithm used for this project was the actor-critic method, specifically using the advantage actor-critic variant. This method involves implementing both an explicit representation of the policy, called the actor, as well as an estimated value function,
+                called the critic. In this project, a deep neural network with a shared feature backbone and two output heads, denoting the actor and the critic, was built using PyTorch to parameterize the policy and state-value functions. The actor network
+                aims to predict the optimal action to take for a given state, while the critic network aims to predict the TD error for the policy taken by the actor. During the back-propagation step, the actor learns to take actions that are favored
+                by the critic network, while the critic network learns the value, \(V(s)\), for a given state.
+
+                <br><br> First, the actor selects an action using the current policy based on the current state. \[a' = argmax_{a'} \pi_{\theta}(a'|s) \] Next, the parameters of the policy are updated based on the TD error, \(r - V(s)\), at time t. Where
+                \(V(s)\) is estimated using the critic network. \[min_{\theta} TDError \cdot -log \pi_{\theta}(a'|s) \] The actor-network uses an optimizer, in this case, "Adam", to update its parameters in order to minimize the above loss function. The
+                advantage actor-critic method aims to encourage the actor-network to take actions that were better than expected; for example, if the reward for a given state was higher than the estimated state-value \(V(s)\) predicted, then the TD error
+                will be positive and thus the loss will be lower - reinforcing the action taken by the actor-network. <br><br> The critic-network parameters are then updated by minimizing the TD error associated with the critic network's state-value \(V(s)\)
+                predictions. Where the loss function used is a smooth L1 function for the TD error. \[min_{\theta} |r - V(s)|_{1} \]
+            </h3>
+
+            <h3 class="light-text small-text">Reward Shaping</h3>
+            <h3 class="light-text smaller-text">
+                Often, RL environments by nature have a sparse reward scheme - in which the agent may not receive rewards for several time steps in the episode. This can negatively affect the learning process of the agent due to the lack of signal. <br><br>                One method used to solve the sparse rewards problem is to use reward shaping - which involves breaking down the main problem into a set of well-defined goals. In the slime volleyball environment, the main problem is to train the agent
+                to beat the opponent in the game of volleyball; however, an intermediate goal for this environment would be for the agent to learn how to move in the environment to get closer to the ball. In doing so, the agent will learn how to keep
+                the ball in the air and thus lose fewer points. In order to implement this strategy, supplemental penalties were incurred to the agent proportional to the agent's distance from the ball. Hyperparameters such as the scale of the penalty,
+                as well as the maximum penalty, were optimized through trial-and-error. \[reward : reward - min(6e-1 \cdot distance, 1)\] However, reward shaping also introduces human bias into the agent's learning process - since a human has broken down
+                the problem for the agent based on assumptions that may or may not be correct. Thus, methods such as automatic goal generation have been introduced in recent literature in order for the agent to learn a set of well-defined goals on its
+                own.
+            </h3>
+
+            <h3 class="light-text small-text">Results</h3>
+            <h3 class="light-text smaller-text">
+                The agent was trained for 5000 episodes, with a learning rate of \(3e-2\). These hyperparameters were tuned through trial-and-error based on quantitative evaluation and visual inspection of the results. <br><br>Qualitatively, when visualizing
+                the agent's performance against an opponent, it can be seen that the agent learned over time to control the ball in the air very well, learning how to adapt its movement based on the velocity of the ball. This likely can be attributed
+                to the supplemental penalties incurred for having a large distance from the ball. However, it's clear the agent does not focus on sending the ball to the opponent's half of the court in order to score more points. This likely occurred
+                due to the agent finding a loop-hole in the environment - the episode will last for a maximum of 3000 time steps before ending with no additional penalties. Thus, the agent likely learned to keep the ball in the air for the majority of
+                the episode in order to not lose any points.
+
+                <div class="align-center padding-bottom-10">
+                    <img src="../images/episode_rewards.png" alt="Episode Rewards" class="showcase-image">
+                </div>
+                <center><b><p>Figure 1. Episode rewards over time</p></b></center>
+
+                <br>Quantitatively, the results from <b>Figure 1.</b> show that the agent is able to optimize the rewards from the environment over time - depicting a slight increase in the rewards over the training process.
+
+                <div class="align-center padding-bottom-10">
+                    <img src="../images/episode_length.png" alt="Episode Length" class="showcase-image">
+                </div>
+                <center><b><p>Figure 2. Episode length over time</p></b></center>
+
+                <br>Further, the results from
+                <b>Figure 2.</b> depict the steep increase in episode length over time - showing that the agent is capable of keeping the ball in the air and returning serves from the opponent.
+
+                <div class="align-center padding-bottom-10">
+                    <img src="../images/rounds_won.png" alt="Rounds won over time" class="showcase-image">
+                </div>
+                <center><b><p>Figure 3. Rounds won over time</p></b></center>
+
+                <br>Finally, <b>Figure 3.</b> shows the number of rounds won against the opponent per episode, showing a slight increase in the frequency of rounds being won against the opponent as the agent learns more. However, across all of the episodes,
+                the agent was not able to beat the opponent for all 5 rounds.
+            </h3>
+
+            <h3 class="light-text small-text">Source Code</h3>
+
+            <a href="https://github.com/aswinvisva/slime-volleyball-a2c" class="light-text smaller-text">Find the code here</a>
+        </div>
+    </div>
+
+    <div class="align-center grey-background padding-top-10 padding-bottom-10 full-width">
+        <div class="inline">
+            <p class="white-text heavy-text">
+                <a href="mailto:aavisva@uwaterloo.ca?subject=Hey!" class="white-text light-text padding-right-10">
+                Email
+            </a>
+                <a href="https://github.com/aswinvisva" class="white-text light-text padding-right-10">
+                GitHub
+            </a>
+                <a href="https://www.linkedin.com/in/aswinvisva/" class="white-text light-text padding-right-10">
+                Linkedin
+            </a> © Aswin Visva 2022</p>
+        </div>
+    </div>
+</body>
+
+</html>
